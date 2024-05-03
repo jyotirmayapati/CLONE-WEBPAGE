@@ -46,6 +46,16 @@
         }
 
         @media screen and (min-width: 1024px) {
+            .navbar {
+                display: none;
+            }
+
+            .option-list {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
             .top-bar {
                 background-color: #f8f8f8;
                 color: #666;
@@ -84,13 +94,24 @@
             }
 
             .menu li {
-                display: inline;
+                display: inline-block;
                 margin-right: 20px;
             }
 
             .menu li a {
                 color: white;
                 text-decoration: none;
+            }
+
+            .product-container {
+                margin-top: 20px;
+            }
+
+            .product {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+                margin-bottom: 10px;
             }
 
             .nav-bar2 {
@@ -131,7 +152,7 @@
 
             .logo {
                 font-size: 1.5rem;
-                
+
             }
 
             .search-bar input[type="text"] {
@@ -174,48 +195,30 @@
                 height: 3px;
                 background-color: #fff;
                 margin: 3px 0;
+                cursor: pointer;
             }
 
-            .nav-links {
-                list-style: none;
+            .options {
+                display: none;
+                padding-top: 30px;
+            }
+
+            .options ul {
+                list-style-type: none;
                 padding: 0;
-                display: flex;
             }
 
-            .nav-links li {
-                margin-right: 20px;
-            }
-
-            .nav-links li a {
+            .options ul li {
+                padding: 10px;
                 color: #fff;
-                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .options ul li:hover {
+                background-color: #555;
             }
 
             .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: #333;
-                padding: 10px;
-            }
-
-            .nav-links li {
-                margin: 10px 0;
-            }
-
-            .nav-links li a {
-                color: #fff;
-                text-decoration: none;
-            }
-
-            .active {
                 display: flex;
             }
         }
@@ -378,6 +381,17 @@
             padding-top: 10px;
 
         }
+
+        .product-container {
+            margin-top: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -394,15 +408,22 @@
         <nav class="navbar">
             <nav class="list">
                 <div class="menu-toggle">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                    <div class="bar" onclick="toggleOptions()"></div>
+                    <div class="bar" onclick="toggleOptions()"></div>
+                    <div class="bar" onclick="toggleOptions()"></div>
+                    <div id="options" class="options">
+                        <ul class="option-list">
+                            <li>WOMEN</li>
+                            <li>MEN</li>
+                        </ul>
+                    </div>
+
                 </div>
             </nav>
             <div class="logo">ASOS</div>
             <ul class="menu">
-                <li><a href="#">WOMEN</a></li>
-                <li><a href="#">MEN</a></li>
+                <li><a href="#" onclick="showAllProducts('women')">WOMEN</a></li>
+                <li><a href="#" onclick="showAllProducts('men')">MEN</a></li>
             </ul>
             <div class="search-bar">
                 <input type="text" placeholder="Search for items and brands">
@@ -414,6 +435,7 @@
             </div>
 
         </nav>
+        <div id="products-container" class="products-container"></div>
         <navbar class="nav-bar2">
             <div class="links">
                 <a href="#New">New in</a>
@@ -532,6 +554,16 @@
 </body>
 
 <script>
+    function toggleOptions() {
+        var options = document.getElementById("options");
+        if (options.style.display === "block") {
+            options.style.display = "none";
+        } else {
+            options.style.display = "block";
+        }
+    }
+
+
     const slides = document.querySelectorAll('.slide');
     const bulletsContainer = document.querySelector('.bullets');
 
@@ -561,28 +593,28 @@
     }
 
     goToSlide(currentSlide);
+
     
-    
-    const men_section = document.querySelector('.men');
-    const women_section = document.querySelector('.women');
+    const womenProducts = ["Dress", "Skirt", "Tees", "Shoes"];
+    const menProducts = ["Shirt", "Trousers", "Jacket", "Shoes"];
 
-    const men_section_items = document.querySelector('.men-section-items');
-    const women_section_items = document.querySelector('.women-section-items');
+    function showAllProducts(category) {
+        const productsContainer = document.getElementById("products-container");
+        productsContainer.innerHTML = "";
 
-    const container_ele = document.querySelector('.container');
-    var bodyele = document.getElementsByTagName("BODY");
+        let allProducts = [];
+        if (category === 'women') {
+            allProducts = womenProducts;
+        } else if (category === 'men') {
+            allProducts = menProducts;
+        }
 
-    men_section.onmouseover = () => {
-        men_section_items.classList.remove('visibility');
-    }
-    men_section.onmouseout = () => {
-        men_section_items.classList.add('visibility');
-    }
-    women_section.onmouseover = () => {
-        women_section_items.classList.remove('visibility');
-    }
-    women_section.onmouseout = () => {
-        women_section_items.classList.add('visibility');
+        allProducts.forEach(product => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
+            productElement.textContent = product;
+            productsContainer.appendChild(productElement);
+        });
     }
 </script>
 
