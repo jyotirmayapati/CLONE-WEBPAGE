@@ -11,8 +11,36 @@
             font-family: futura-pt, sans-serif;
         }
 
+        .navbar {
+            width: 100%;
+        }
+
+        .nav-bar2 {
+            width: 100%;
+        }
+
+        .links {
+            margin-left: 30px;
+        }
+
         @media screen and (max-width: 1024px) {
             .top-bar {
+                display: none;
+            }
+
+            .nav-bar2 {
+                display: none;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .list {
+                display: none;
+            }
+
+            .nav-links li {
                 display: none;
             }
         }
@@ -40,55 +68,13 @@
             .inside-top-bar>p {
                 margin-top: -10px;
             }
-        }
 
-        @media screen and (min-width: 768px) {
-
-            /* .nav-1 {
-                height: 60px;
-                width: 100%;
-                background-color: #2d2d2d;
+            .icon i {
+                gap: 100px;
             }
 
-            .nav-1>button {
-                background-color: #2d2d2d;
-                height: 60px;
-                width: 150px;
-                padding-left: -5px;
-            }
-
-            .nav-1>button>h1 {
-                color: white;
-                font-size: larger;
-                padding-top: 5px;
-            }
-
-            .search-container {
-                display: flex;
-                align-items: center;
-                margin-top: -47px;
-                margin-left: 500px;
-            }
-
-            .search-container input[type="text"] {
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 50px;
-                margin-right: 5px;
-                width: 700px;
-            } */
-            .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color: #333;
-                color: white;
-                padding: 10px;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-                margin-left: 40px;
+            .search-bar input[type="text"] {
+                width: 500px;
             }
 
             .menu {
@@ -106,31 +92,292 @@
                 color: white;
                 text-decoration: none;
             }
+
+            .nav-bar2 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: white;
+                padding: 10px;
+                margin: 0 70px 0 70px;
+                background-color: #525050;
+                width: 100%;
+                margin-left: -10px;
+            }
+
+            .links a {
+                text-decoration: none;
+                color: white;
+                margin: 0 10px;
+            }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            .search-bar input[type="text"] {
+                width: 300px;
+            }
+
+        }
+
+        @media screen and (min-width: 100px) {
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #333;
+                color: white;
+                padding: 10px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+                
+            }
+
             .search-bar input[type="text"] {
                 padding: 8px;
                 border: 1px solid #ccc;
                 border-radius: 30px;
                 margin-right: 5px;
-                width: 500px;
             }
+
             .icons {
                 display: flex;
                 margin-right: 50px;
             }
 
             .icons i {
-                font-size: 1.2rem;
+                font-size: 2.2rem;
                 margin-right: 10px;
                 color: white;
             }
         }
 
-        /* @media screen and (min-width: 380px) {
-            i {
-                margin-top: -30px;
-                margin-left: 1240px;
+        @media (max-width: 1023px) {
+            .list {
+                background-color: #333;
+                color: #fff;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
             }
-        } */
+
+            .menu-toggle {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .bar {
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                margin: 3px 0;
+            }
+
+            .nav-links {
+                list-style: none;
+                padding: 0;
+                display: flex;
+            }
+
+            .nav-links li {
+                margin-right: 20px;
+            }
+
+            .nav-links li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                padding: 10px;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .nav-links li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .active {
+                display: flex;
+            }
+        }
+
+        .first-image {
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .category img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .category p {
+            text-align: center;
+        }
+
+        @media screen and (min-width: 736px) {
+            .section {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .category {
+                width: 100%;
+            }
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .slider {
+            display: flex;
+        }
+
+        .slide {
+            flex: 0 0 33.3333%;
+        }
+
+        .slide img {
+            width: 100%;
+        }
+
+        .bullets {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bullet {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #555;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .bullet.active {
+            background-color: #000;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #CCFF00 0%, #9CF0E0 100%);
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .app {
+            border: 1px solid black;
+            border-radius: 50px;
+            width: 33%;
+            justify-content: center;
+            margin: auto;
+            text-align: center;
+        }
+
+        .banner-text {
+            text-align: center;
+        }
+
+        .download {
+            border-radius: 50px;
+            background-color: black;
+            width: 33%;
+            justify-content: center;
+            margin: auto;
+            padding: 1px;
+        }
+
+        .brands {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+        }
+
+        .footer-text {
+            font-size: large;
+            color: #666;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 5px;
+            line-height: 16px;
+            margin: 0 16px;
+            background-color: #f8f8f8;
+            width: 100%;
+        }
+
+        .footer-img {
+            background-color: #f8f8f8;
+            margin-top: -12px;
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        .footer-img img {
+            border: 1px solid #f8f8f8;
+            border-radius: 50%;
+            outline: 1px solid currentColor;
+            margin-left: 20px;
+            height: 50px;
+
+        }
+
+        .cradit {
+            background-color: #ddd;
+            width: 100%;
+            color: #666;
+            height: 50px;
+            padding-left: 16px;
+
+            padding-top: 10px;
+
+        }
     </style>
 </head>
 
@@ -145,6 +392,13 @@
             </div>
         </div>
         <nav class="navbar">
+            <nav class="list">
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
             <div class="logo">ASOS</div>
             <ul class="menu">
                 <li><a href="#">WOMEN</a></li>
@@ -154,13 +408,182 @@
                 <input type="text" placeholder="Search for items and brands">
             </div>
             <div class="icons">
-                <i class='bx bx-child' ></i>
-                <i class='bx bx-heart' ></i>
+                <i class='bx bx-child'></i>
+                <i class='bx bx-heart'></i>
                 <i class='bx bx-shopping-bag'></i>
             </div>
+
         </nav>
-    </div>
+        <navbar class="nav-bar2">
+            <div class="links">
+                <a href="#New">New in</a>
+                <a href="#Clothing">Clothing</a>
+                <a href="#Trending">Trending</a>
+                <a href="#Shoes">Shoes</a>
+                <a href="#Accessories">Accessories</a>
+                <a href="#Brands">Brands</a>
+                <a href="#Sportswear">Sportswear</a>
+                <a href="#Topman">Topman</a>
+                <a href="#Marketplace">Marketplace</a>
+                <a href="#Sale">Sale</a>
+            </div>
+        </navbar>
+        <div>
+            <img class="first-image"
+                src="https://content.asos-media.com/-/media/homepages/unisex/events-2024/april/spring-fling/red-pen-up-to-70-off-almost-everything/uk-assets/mw/desktophero_mw_2880x1000_v2.jpg"
+                alt="">
+        </div>
+        <div class="section">
+            <div class="category">
+                <img src="https://content.asos-media.com/-/media/homepages/mw/2024/april/29-spring-fling-gbl/cat-tray-1/cat-try-1red-pen--globalgradient-copyschuhe--sneakerdemw870x1100.jpg"
+                    alt="">
+                <p>SHOES + SNEAKS</p>
+            </div>
+            <div class="category">
+                <img src="https://content.asos-media.com/-/media/homepages/mw/2024/april/29-spring-fling-gbl/cat-tray-1/cat-try-1_red-pen---global_gradient-copy_tees_de_mw_870x1100.jpg"
+                    alt="">
+                <p>TEES</p>
+            </div>
+            <div class="category">
+                <img src="https://content.asos-media.com/-/media/homepages/mw/2024/april/29-spring-fling-gbl/cat-tray-1/cat-try-1_red-pen---global_gradient-copy_shorts_de_mw_870x1100.jpg"
+                    alt="">
+                <p>SHORTS</p>
+            </div>
+            <div class="category">
+                <img src="https://content.asos-media.com/-/media/homepages/mw/2024/april/29-spring-fling-gbl/cat-tray-1/cat-try-1red-pen--globalno-gradienthoodies--sweatshirtsdemw870x1100.jpg"
+                    alt="">
+                <p>HOODIES + SWEATS</p>
+            </div>
+        </div>
+        <h2> Selling fast</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img
+                        src="https://images.asos-media.com/products/jack-jones-loose-linen-trouser-with-drawstring-waist-in-beige/205761308-1-crockery?$n_640w$&wid=634&fit=constrain"
+                        alt="Product 1"></div>
+                <div class="slide"><img
+                        src="https://images.asos-media.com/products/calvin-klein-lifestyle-open-knit-polo-in-beige/205806506-1-beige?$n_640w$&wid=634&fit=constrain"
+                        alt="Product 2"></div>
+                <div class="slide"><img
+                        src="https://images.asos-media.com/products/weekday-seth-linen-blend-trousers-in-off-white/206494813-1-offwhite?$n_640w$&wid=634&fit=constrain"
+                        alt="Product 3"></div>
+                <div class="slide"><img
+                        src="https://images.asos-media.com/products/jack-jones-knitted-crochet-polo-in-white/206300860-1-white?$n_640w$&wid=634&fit=constrain"
+                        alt="Product 4"></div>
+                <div class="slide"><img
+                        src="https://images.asos-media.com/products/abercrombie-fitch-crochet-squares-short-sleeve-knit-polo-shirt-in-black/206243974-1-blackandwhite?$n_640w$&wid=634&fit=constrain"
+                        alt="Product 5"></div>
+                <div class="slide"><img
+                        src="https://images.asos-media.com/products/jack-jones-oversized-crochet-button-through-shirt/206300899-1-beige?$n_640w$&wid=634&fit=constrain"
+                        alt="Product 6"></div>
+            </div>
+            <div class="bullets"></div>
+        </div>
+        <div class="banner">
+            <div class="banner-text">
+                <div class="app">
+                    <h1>THE ASOS APP</h1>
+                </div>
+                <h1>Notification on your orders and returns?</h1>
+                <h1>App-solutely!</h1>
+                <div class="download">
+                    <h1 style="color: white;">DOWNLOAD NOW</h1>
+                </div>
+            </div>
+        </div>
+        <h2>TRENDING BRANDS</h2>
+        <div class="brands">
+            <img src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/tommy-hilfiger-hp-logos-256x256.jpg"
+                alt="">
+            <img src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/north-face.png"
+                alt="">
+            <img src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/adidas-hp-logos-256x256---v2.png"
+                alt="">
+            <img src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/carhartt-hp-logos-256x256.jpg"
+                alt="">
+            <img src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/ellesse-hp-logos-256x256.jpg"
+                alt="">
+            <img src="https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/dr-martens-hp-logos-256x256.jpg"
+                alt="">
+        </div>
+        <div class="footer-webpage">
+            <footer>
+                <div class="footer-text">
+                    <p>Some of our international sites:</p>
+                </div>
+                <div class="footer-img">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/es.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/de.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/au.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/fr.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/us.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/dk.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/it.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/nl.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/pl.png" alt="">
+                    <img src="https://assets.asosservices.com/storesa/images/flags/se.png" alt="">
+                </div>
+                <div class="cradit">
+                    <p>Created By Jyotirmaya Pati</p>
+                </div>
+            </footer>
+        </div>
     </div>
 </body>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const bulletsContainer = document.querySelector('.bullets');
+
+    slides.forEach((slide, index) => {
+        const bullet = document.createElement('span');
+        bullet.classList.add('bullet');
+        bullet.addEventListener('click', () => {
+            goToSlide(index);
+        });
+        bulletsContainer.appendChild(bullet);
+    });
+
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+        slides.forEach((slide) => {
+            slide.style.transform = `translateX(-${index * 100}%)`;
+        });
+        bullets.forEach((bullet, bulletIndex) => {
+            if (bulletIndex === index) {
+                bullet.classList.add('active');
+            } else {
+                bullet.classList.remove('active');
+            }
+        });
+        currentSlide = index;
+    }
+
+    goToSlide(currentSlide);
+    
+    
+    const men_section = document.querySelector('.men');
+    const women_section = document.querySelector('.women');
+
+    const men_section_items = document.querySelector('.men-section-items');
+    const women_section_items = document.querySelector('.women-section-items');
+
+    const container_ele = document.querySelector('.container');
+    var bodyele = document.getElementsByTagName("BODY");
+
+    men_section.onmouseover = () => {
+        men_section_items.classList.remove('visibility');
+    }
+    men_section.onmouseout = () => {
+        men_section_items.classList.add('visibility');
+    }
+    women_section.onmouseover = () => {
+        women_section_items.classList.remove('visibility');
+    }
+    women_section.onmouseout = () => {
+        women_section_items.classList.add('visibility');
+    }
+</script>
 
 </html>
