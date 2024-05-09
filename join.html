@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .SignInPage {
+        margin: auto;
+
+        background-color: white;
+        width: 50%;
+        margin-top: 20px;
+        padding: 30px;
+    }
+
+    .text-category {
+        font-size: 10px;
+        letter-spacing: 2px;
+        font-family: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    body {
+
+        margin: auto;
+        background-color: #eee;
+    }
+
+    img {
+        margin: auto;
+        display: block;
+        
+    }
+
+    .signInBox {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .signInBox>div {
+
+        width: 50%;
+        border-bottom: 2px solid gray;
+        margin-bottom: 10px;
+        margin: auto;
+
+    }
+
+    .container {
+        margin-top: 60px;
+        background-color: #eee;
+    }
+
+    .signinForm>label,
+    input,
+    button {
+        width: 100%;
+        height: 35px;
+        font-size: 15px;
+        margin: 10px;
+        color: rgb(116, 113, 113);
+        border: 1px solid gray;
+        
+
+    }
+
+    input:hover {
+        border: 2px solid gray;
+    }
+
+    .signinForm {
+        justify-content: start;
+    }
+
+    .signinForm>label {
+
+        border: none;
+
+    }
+
+    button:hover {
+        border: 2px solid whitesmoke;
+        border-radius: 20px;
+        background-color: rgb(40, 52, 147);
+        font-weight: bolder;
+    }
+
+    button {
+        background-color: black;
+        color: white;
+        font-weight: bolder;
+    }
+
+    a,
+    p {
+        color: rgb(72, 70, 70);
+        font-weight: bold;
+
+
+    }
+
+    a:hover {
+        color: rgb(85, 85, 247);
+        font-size: 20px;
+
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+
+        <img src="./download.svg" alt="">
+
+        <div class="SignInPage">
+
+
+
+            <div class="signInBox">
+
+                <div>Join</div>
+                <p>|</p>
+                <div>Sign In</div>
+            </div>
+
+            <div class="signinForm">
+                <label class="text-category" for="Name"><b>Name :</b></label> <br>
+                <input type="text" placeholder="Enter Your Name" required> <br>
+                <label class="text-category" for="Phone"><b>Phone No. :</b></label> <br>
+                <input type="number" placeholder="Enter Your Mobile No" required> <br>
+                <label class="text-category" for="email"><b>Email :</b></label> <br>
+                <input type="email" placeholder="Enter Your Email" required> <br>
+                <label class="text-category" for="Password"><b>Password :</b></label> <br>
+                <input type="password" placeholder="Enter Your Password" required> <br>
+                <button>JOIN ASOS</button>
+            </div>
+
+            <p style="text-align: center;">Already a User? <a href='/signin'>SignIn</a></p>
+
+        </div>
+
+
+    </div>
+
+    <p style="text-align: center; font-weight: 600;">Privacy Policy | Terms and Conditions</p>
+
+</body>
+
+</html>

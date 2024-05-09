@@ -1,411 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, font-family: futura-pt, sans-serif;">
-    <title>REPLICA OF ASOS WEBSITE</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        * {
-            font-family: futura-pt, sans-serif;
-        }
-
-        .navbar {
-            width: 100%;
-        }
-
-        .nav-bar2 {
-            width: 100%;
-        }
-
-        .links {
-            margin-left: 30px;
-        }
-
-        @media screen and (max-width: 1024px) {
-            .top-bar {
-                display: none;
-            }
-
-            .nav-bar2 {
-                display: none;
-            }
-
-            .menu {
-                display: none;
-            }
-
-            .list {
-                display: none;
-            }
-
-            .nav-links li {
-                display: none;
-            }
-        }
-
-        @media screen and (min-width: 1024px) {
-            .navbar {
-                display: none;
-            }
-
-            .option-list {
-                display: none;
-            }
-        }
-
-        @media screen and (min-width: 1024px) {
-            .top-bar {
-                background-color: #f8f8f8;
-                color: #666;
-                display: block;
-                width: 100%;
-                padding: 20px;
-                height: 20px;
-                box-sizing: border-box;
-            }
-
-            .inside-top-bar {
-                display: flex;
-                float: right;
-                height: 100%;
-                list-style: none;
-                gap: 20px;
-                margin-right: 50px;
-            }
-
-            .inside-top-bar>p {
-                margin-top: -10px;
-            }
-
-            .icon i {
-                gap: 100px;
-            }
-
-            .search-bar input[type="text"] {
-                width: 500px;
-            }
-
-            .menu {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .menu li {
-                display: inline-block;
-                margin-right: 20px;
-            }
-
-            .menu li a {
-                color: white;
-                text-decoration: none;
-            }
-
-            .product-container {
-                margin-top: 20px;
-            }
-
-            .product {
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 10px;
-                margin-bottom: 10px;
-            }
-
-            .nav-bar2 {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color: white;
-                padding: 10px;
-                margin: 0 70px 0 70px;
-                background-color: #525050;
-                width: 100%;
-                margin-left: -10px;
-            }
-
-            .links a {
-                text-decoration: none;
-                color: white;
-                margin: 0 10px;
-            }
-        }
-
-        @media screen and (min-width: 768px) and (max-width: 1023px) {
-            .search-bar input[type="text"] {
-                width: 300px;
-            }
-
-        }
-
-        @media screen and (min-width: 100px) {
-            .navbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color: #333;
-                color: white;
-                padding: 10px;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-
-            }
-
-            .search-bar input[type="text"] {
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 30px;
-                margin-right: 5px;
-            }
-
-            .icons {
-                display: flex;
-                margin-right: 50px;
-            }
-
-            .icons i {
-                font-size: 2.2rem;
-                margin-right: 10px;
-                color: white;
-            }
-        }
-
-        @media (max-width: 1023px) {
-            .list {
-                background-color: #333;
-                color: #fff;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 20px;
-            }
-
-            .menu-toggle {
-                display: none;
-                flex-direction: column;
-                cursor: pointer;
-            }
-
-            .bar {
-                width: 25px;
-                height: 3px;
-                background-color: #fff;
-                margin: 3px 0;
-                cursor: pointer;
-            }
-
-            .options {
-                display: none;
-                padding-top: 30px;
-            }
-
-            .options ul {
-                list-style-type: none;
-                padding: 0;
-            }
-
-            .options ul li {
-                padding: 10px;
-                color: #fff;
-                cursor: pointer;
-            }
-
-            .options ul li:hover {
-                background-color: #555;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-        }
-
-        .first-image {
-            width: 100%;
-            height: auto;
-            margin-top: 10px;
-        }
-
-        .section {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .category {
-            width: 50%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        .category img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .category p {
-            text-align: center;
-        }
-
-        @media screen and (min-width: 736px) {
-            .section {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .category {
-                width: 100%;
-            }
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .slider-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-        }
-
-        .slider {
-            display: flex;
-        }
-
-        .slide {
-            flex: 0 0 33.3333%;
-        }
-
-        .slide img {
-            width: 100%;
-        }
-
-        .bullets {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .bullet {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #555;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
-        .bullet.active {
-            background-color: #000;
-        }
-
-        .banner {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #CCFF00 0%, #9CF0E0 100%);
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .app {
-            border: 1px solid black;
-            border-radius: 50px;
-            width: 33%;
-            justify-content: center;
-            margin: auto;
-            text-align: center;
-        }
-
-        .banner-text {
-            text-align: center;
-        }
-
-        .download {
-            border-radius: 50px;
-            background-color: black;
-            width: 33%;
-            justify-content: center;
-            margin: auto;
-            padding: 1px;
-        }
-
-        .brands {
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-            margin: auto;
-        }
-
-        .footer-text {
-            font-size: large;
-            color: #666;
-            font-size: 12px;
-            font-weight: 400;
-            letter-spacing: 5px;
-            line-height: 16px;
-            margin: 0 16px;
-            background-color: #f8f8f8;
-            width: 100%;
-        }
-
-        .footer-img {
-            background-color: #f8f8f8;
-            margin-top: -12px;
-            padding-top: 10px;
-            width: 100%;
-        }
-
-        .footer-img img {
-            border: 1px solid #f8f8f8;
-            border-radius: 50%;
-            outline: 1px solid currentColor;
-            margin-left: 20px;
-            height: 50px;
-
-        }
-
-        .cradit {
-            background-color: #ddd;
-            width: 100%;
-            color: #666;
-            height: 50px;
-            padding-left: 16px;
-
-            padding-top: 10px;
-
-        }
-
-        .product-container {
-            margin-top: 20px;
-        }
-
-        .product {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPLICA OF ASOS</title>
 </head>
 
+<style>
+
+    
+</style>
 <body>
+    
+
     <div class="container">
-        <div class="top-bar">
-            <div class="inside-top-bar">
-                <p>Marketplace</p>
-                <p>Help & FAQs</p>
-                <img style="height: 20px; margin-top: -10px;"
-                    src="https://assets.asosservices.com/storesa/images/flags/in.png" alt="India Flag Logo">
-            </div>
+
+        <div class="navBar">
+            <div>Marketplace</div>
+            <div>Help & FAQs</div>
+            <div style="margin-right: 40px; border-right: 1px solid rgb(181, 180, 180);"><img src="./ind.png" width="14px" alt=""></div>
         </div>
-        <nav class="navbar">
+        <div class="navBar2">
             <nav class="list">
                 <div class="menu-toggle">
                     <div class="bar" onclick="toggleOptions()"></div>
@@ -420,36 +37,73 @@
 
                 </div>
             </nav>
-            <div class="logo">ASOS</div>
+            <div><img style="width: 50px;" src="./download.svg"  alt=""></div>
             <ul class="menu">
                 <li><a href="#" onclick="showAllProducts('women')">WOMEN</a></li>
                 <li><a href="#" onclick="showAllProducts('men')">MEN</a></li>
             </ul>
+            <div class="name">WOMEN</div>
+            <div class="name">MEN</div>
             <div class="search-bar">
                 <input type="text" placeholder="Search for items and brands">
             </div>
-            <div class="icons">
-                <i class='bx bx-child'></i>
-                <i class='bx bx-heart'></i>
-                <i class='bx bx-shopping-bag'></i>
+            <div id="loginButton" class="loginButton"><img src="./Login.png" alt=""  >
             </div>
+            <div><img src="./favorites.png" ></div>
+            <div><img src="./Cart.png"></div>
 
-        </nav>
-        <div id="products-container" class="products-container"></div>
-        <navbar class="nav-bar2">
-            <div class="links">
-                <a href="#New">New in</a>
-                <a href="#Clothing">Clothing</a>
-                <a href="#Trending">Trending</a>
-                <a href="#Shoes">Shoes</a>
-                <a href="#Accessories">Accessories</a>
-                <a href="#Brands">Brands</a>
-                <a href="#Sportswear">Sportswear</a>
-                <a href="#Topman">Topman</a>
-                <a href="#Marketplace">Marketplace</a>
-                <a href="#Sale">Sale</a>
+        </div>
+        <div class="myaccountpage" id="accountcontent">
+            <div class="signin"><a href='./signup.html'>Sign In </a> <span>&nbsp;&nbsp;| &nbsp;</span>
+           <a href='./join.html'> &nbsp; Join</a> 
             </div>
-        </navbar>
+            <div class="orderSection">
+
+                <div class="belowSection">
+                    <img src="./Login.png" alt="">
+                    <p>My Account</p>
+                </div>
+                <div class="belowSection">
+                    <img src="./order.png" alt="">
+                    <p>My Orders</p>
+                </div>
+                <div class="belowSection">
+                    <img src="./return.png" alt="">
+                    <p>Return Information</p>
+                </div>
+                <div class="belowSection">
+                    <img src="./contact.png" alt="">
+                    <p>Contact Prefrences</p>
+                </div>
+
+
+
+
+            </div>
+        </div>
+      
+
+
+        <div class="navBar3">
+            <div>New in</div>
+            <div>Clothing</div>
+            <div>Trending</div>
+            <div>Shoes</div>
+            <div>Accessories</div>
+            <div>Brands</div>
+            <div>Sportswear</div>
+            <div>Topman</div>
+            <div>Marketplace</div>
+            <div>Sale</div>
+        </div>
+
+        <div class="template">
+            <u> APP EARLY ACCESS:</u> <br>
+            UP TO 70% OFF ALMOST EVERYTHING <br>
+                DOWNLOAD NOW
+                <p>Limited time only. Selected styles marked down on the sites</p>
+        </div>
+
         <div>
             <img class="first-image"
                 src="https://content.asos-media.com/-/media/homepages/unisex/events-2024/april/spring-fling/red-pen-up-to-70-off-almost-everything/uk-assets/mw/desktophero_mw_2880x1000_v2.jpg"
@@ -550,72 +204,10 @@
                 </div>
             </footer>
         </div>
+
+       
     </div>
+
+  <script src="index.js"></script>
 </body>
-
-<script>
-    function toggleOptions() {
-        var options = document.getElementById("options");
-        if (options.style.display === "block") {
-            options.style.display = "none";
-        } else {
-            options.style.display = "block";
-        }
-    }
-
-
-    const slides = document.querySelectorAll('.slide');
-    const bulletsContainer = document.querySelector('.bullets');
-
-    slides.forEach((slide, index) => {
-        const bullet = document.createElement('span');
-        bullet.classList.add('bullet');
-        bullet.addEventListener('click', () => {
-            goToSlide(index);
-        });
-        bulletsContainer.appendChild(bullet);
-    });
-
-    let currentSlide = 0;
-
-    function goToSlide(index) {
-        slides.forEach((slide) => {
-            slide.style.transform = `translateX(-${index * 100}%)`;
-        });
-        bullets.forEach((bullet, bulletIndex) => {
-            if (bulletIndex === index) {
-                bullet.classList.add('active');
-            } else {
-                bullet.classList.remove('active');
-            }
-        });
-        currentSlide = index;
-    }
-
-    goToSlide(currentSlide);
-
-    
-    const womenProducts = ["Dress", "Skirt", "Tees", "Shoes"];
-    const menProducts = ["Shirt", "Trousers", "Jacket", "Shoes"];
-
-    function showAllProducts(category) {
-        const productsContainer = document.getElementById("products-container");
-        productsContainer.innerHTML = "";
-
-        let allProducts = [];
-        if (category === 'women') {
-            allProducts = womenProducts;
-        } else if (category === 'men') {
-            allProducts = menProducts;
-        }
-
-        allProducts.forEach(product => {
-            const productElement = document.createElement("div");
-            productElement.classList.add("product");
-            productElement.textContent = product;
-            productsContainer.appendChild(productElement);
-        });
-    }
-</script>
-
 </html>
